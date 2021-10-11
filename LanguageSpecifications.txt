@@ -1,0 +1,123 @@
+EBNF is used for the language specification
+
+Alphabet:
+
+    * Upper and lower case letters of the english alphabet (a-z, A-Z) 
+    * '_' (underline)
+    * decimal digits (0-9)
+
+Lexic:
+    Special symbols:
+    * program delimiter: #
+    * operators: + - * / < <= == >= = % != 
+    * separators: [] {} () ; : \t \n ' '(space)
+    * reserverd words: begin end var int char string if or and not else while for const read print
+    ------------------------------------------------------------------
+
+    *Identifiers:
+
+    - a sequence of letters, digits and _ which start with a letter:
+
+    non_null_digit := "1" | "2" |...| "9"
+    digit := "0" | non_null_digit
+    letter := "a" |... | "z" | "A" |...| "Z"
+    identifier := letter{letter | digit | "_"}
+
+    *Constants:
+
+    integer:
+        number := non_null_digit{digit}
+        sign := "+" | "-"
+        number_constant := [sign]number
+
+    character:
+        operator := "+" | "-" |... (all the symbols defined above as operators)
+        separators := "[" | "]" | ";" | ... (all the symbols defined above as separators)
+        symbol := operator | separator 
+        character := 'letter' | 'digit' | '_' | operator | separator
+
+    string:
+        string_constant := "{character}"
+
+
+Syntax:
+    program := "#" statement_list "#"
+
+    statement_list := {(statement;)}
+
+    statement := simple_statement | struct_stament
+
+    simple_statement := declaration_statement | assignemt_statement | iostatement
+
+    declaration_statment := "var" type IDENTIFIER [ = CONSTANT]
+
+    assignemt_statement := IDENTIFIER "=" expression
+
+    iostatement := (IDENTIFIER "=" "read()") | (print "(" expression ")")
+
+    type := primitive_type | array_type
+
+    primitive_type := char | int | string
+
+    array_type := "var" "[" type "]" "{" nr "}" IDENTIFIER 
+
+    expression := identifier | constant | "(" expression ")" operator "(" expression ")"
+
+    operator := "+" | "-" | "*" | "/"
+
+    struct_stament := compound_statement | if_statement | while_statement | for_statement
+
+    compound_statement := "BEGIN" statement_list "END"
+
+    if_statement := if "(" condition ")" statement [else statement]
+
+    while_statement := while "(" condition ")" statement
+
+    for_statment := for "(" simple_statement ";" condition ";" simple_statement ")" statement
+
+    condition := [not] expression relation expression {((and | or) condition)}
+
+    relation := "<" | "<= " | ">" | ">=" | "==" | "!="
+
+Tokens:
+    [
+    ]
+    (
+    )
+    {
+    }
+    >
+    >=
+    <
+    <=
+    =
+    !=
+    ==
+    +
+    *
+    -
+    #
+    %
+    /
+    _
+    ' ' (space)
+    '\n' (newline)
+    '\t' (tab)
+    if
+    not
+    and
+    or
+    else
+    while
+    for
+    var
+    begin
+    end
+    ;
+
+
+
+
+
+
+
