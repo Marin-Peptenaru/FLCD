@@ -49,7 +49,7 @@ Syntax:
 
     simple_statement := declaration_statement | assignemt_statement | iostatement
 
-    declaration_statment := "var" type IDENTIFIER [ = CONSTANT]
+    declaration_statment := "var" type IDENTIFIER [ = expression]
 
     assignemt_statement := IDENTIFIER "=" expression
 
