@@ -43,11 +43,11 @@ Lexic:
 Syntax:
     program := "#" statement_list "#"
 
-    statement_list := {(statement;)}
+    statement_list := {(statement";")}
 
     statement := simple_statement | struct_stament
 
-    simple_statement := declaration_statement | assignemt_statement | iostatement
+    simple_statement := declaration_statement | assignment_statement | iostatement
 
     declaration_statment := "var" type IDENTIFIER [ = expression]
 
@@ -61,21 +61,21 @@ Syntax:
 
     array_type := "var" "[" type "]" "{" nr "}" IDENTIFIER 
 
-    expression := identifier | constant | "(" expression ")" operator "(" expression ")"
+    expression := identifier | constant | ( "(" expression ")" operator "(" expression ")" )
 
     operator := "+" | "-" | "*" | "/"
 
-    struct_stament := compound_statement | if_statement | while_statement | for_statement
+    struct_statement := compound_statement | if_statement | while_statement | for_statement
 
     compound_statement := "BEGIN" statement_list "END"
 
-    if_statement := if "(" condition ")" statement [else statement]
+    if_statement := if "(" condition ")" statement ["else" statement]
 
-    while_statement := while "(" condition ")" statement
+    while_statement := "while" "(" condition ")" statement
 
-    for_statment := for "(" simple_statement ";" condition ";" simple_statement ")" statement
+    for_statment := "for" "(" simple_statement ";" condition ";" simple_statement ")" statement
 
-    condition := [not] expression relation expression {((and | or) condition)}
+    condition := ["not"] expression relation expression {(("and" | "or") condition)}
 
     relation := "<" | "<= " | ">" | ">=" | "==" | "!="
 
@@ -100,7 +100,6 @@ Tokens:
     %
     /
     _
-    ' ' (space)
     '\n' (newline)
     '\t' (tab)
     if
