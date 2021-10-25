@@ -1,7 +1,4 @@
-package parser
-
 // github link: https://github.com/Marin-Peptenaru/FLCD/tree/master/app
-import "fmt"
 
 // type alias for symbols. A Symbol is just a string.
 type Symbol string
