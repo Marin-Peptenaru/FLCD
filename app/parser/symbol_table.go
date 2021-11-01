@@ -15,6 +15,7 @@ type STIndex struct {
 	bucketIndex int
 }
 
+
 // Interface of the Hash Table based symbol table.
 type SymbolTable interface {
 	// Takes a Symbol as parameter. Computes the hash of a symbol and checks if it is not already in the symbol table.
@@ -33,4 +34,8 @@ type SymbolTable interface {
 //Just a utility function for creating error out of invalid indexes
 func invalidIndex(index STIndex) error {
 	return fmt.Errorf("invalid symbol table index: %v", index);
+}
+
+func NullIndex() STIndex {
+	return STIndex{tableIndex: -1, bucketIndex: -1}
 }

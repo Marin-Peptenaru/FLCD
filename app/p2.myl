@@ -1,0 +1,20 @@
+#
+
+var int a = read();
+var int b = read();
+
+if (a == 0 or b == 0)
+    print(0);
+else
+    begin 
+        var int r = 0;
+        while(b != 0)
+            begin
+                r = a%b;
+                a = b;
+                b = r;
+            end
+        print(a);
+    end
+
+#

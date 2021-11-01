@@ -1,0 +1,11 @@
+#
+
+var int _A132bd=123;
+var string b01="abcdefg";
+var char c='t';
+
+print(_A132bd);
+print(b01);
+print(c);
+
+#

@@ -1,8 +1,12 @@
 package parser
 
 type LexicalVerifier interface {
-	SyntacticallyCorrect(string) bool
+	IsOperator(string) bool
+	IsSeparator(string) bool
 	IsPredefinedToken(string) bool
 	IsConstant(string) bool
-	IsIndetifier(string) bool
+	IsIdentifier(string) bool
+	IsChar(string) bool
+	IsInt(string) bool
+	IsString(string) bool
 }

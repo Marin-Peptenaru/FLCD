@@ -6,12 +6,13 @@ import (
 )
 
 func main() {
-	st := parser.NewSymbolTable()
-	index := st.SaveSymbol("var_1")
-
-	fmt.Print(index)
-	fmt.Println(st.GetSymbol(index))
-
-	fmt.Println(st.SaveSymbol("var_1"))
+	parser := parser.NewParser()
+	pif, constants, indetifiers := parser.Parse("p4.myl")
+	fmt.Println("PIF")
+	fmt.Println(pif)
+	fmt.Println("Constants")
+	fmt.Println(constants)
+	fmt.Println("Identifiers")
+	fmt.Println(indetifiers)
 
 }

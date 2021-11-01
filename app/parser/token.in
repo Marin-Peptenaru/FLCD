@@ -18,6 +18,8 @@
 %
 /
 _
+'
+"
 if
 not
 and
@@ -28,4 +30,6 @@ for
 var
 begin
 end
+read
+print
 ;
