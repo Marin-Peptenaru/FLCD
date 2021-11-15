@@ -55,7 +55,7 @@ func separateTokens(s string) []string {
 		}
 
 	}
-
+	fmt.Println("Tokens: ", tokens)
 	return tokens
 }
 

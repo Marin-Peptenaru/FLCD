@@ -1,6 +1,6 @@
 #
 
-var int _A132bd=123;
+var int $A132bd=123;
 var string b01="abcdefg";
 var char c='t';
 

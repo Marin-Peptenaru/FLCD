@@ -7,7 +7,7 @@ import (
 
 func main() {
 	parser := parser.NewParser()
-	pif, constants, indetifiers := parser.Parse("p4.myl")
+	pif, constants, indetifiers := parser.Parse("p1.myl")
 	fmt.Println("PIF")
 	fmt.Println(pif)
 	fmt.Println("Constants")
